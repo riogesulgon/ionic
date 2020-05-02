@@ -15,5 +15,6 @@ export class PersonInputComponent {
     onPersonCreate() {
         console.log('Created a person ' + this.enteredPersonName);
         this.personService.addPerson(this.enteredPersonName);
+        this.enteredPersonName = '';
     }
 }
