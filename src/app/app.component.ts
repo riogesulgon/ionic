@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   persons = ['Max', 'Manuel', 'Anna'];
+
+  onPersonCreated($event) {
+    this.persons.push($event);
+  }
 }
