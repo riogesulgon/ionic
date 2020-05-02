@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PersonsService } from './persons/persons.service';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  persons = ['Max', 'Manuel', 'Anna'];
 
-  onPersonCreated($event) {
-    this.persons.push($event);
-  }
 }
