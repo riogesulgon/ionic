@@ -11,14 +11,21 @@ const clear = () => {
   reasonInput.value = '';
   amountInput.value = '';
 }
+
 confirmBtn.addEventListener('click', () => {
   const enteredReason = reasonInput.value;
   const enteredAmount = amountInput.value;
 
   if (enteredReason.trim().length <= 0 || enteredAmount <= 0 || enteredAmount.trim().length <= 0) {
-    return;
+    const alert = document.createElement('ion-alert');
+    alert.header = 'Invalid inputs';
+    alert.subHeader = 'Reason/Amount';
+    alert.message = 'Reason or amount is not valid.';
+    alert.buttons = ['Okay'];
+    document.body.appendChild(alert);
+    return alert.present();
   };
-  console.log(enteredReason, enteredAmount);
+
   const newItem = document.createElement('ion-item');
   newItem.textContent = enteredReason + ": $" + enteredAmount;
   expensesList.appendChild(newItem);
